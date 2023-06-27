@@ -34,7 +34,7 @@ function checkUniqueRegister(data,res,req){
                             })
                             userForm.create(data).then(()=>{
                                 account_info(data.username).then(_data => {
-                                    res.render('user-page', {data: _data});
+                                    res.render('user-page', {data: _data, module: undefined});
                                 });
                             })
 

@@ -23,6 +23,13 @@
         <div class="tab " id = "logout">Выйти</div>
     </div>
     <%- data  %>
+
+    <% if (module != undefined) { %>
+        <% if (module.type == "workers") { %>
+            <% module.content %>
+        <% } %>
+    <% } %>
+
 </body>
     <script> 
         let logout = document.querySelector("#logout")

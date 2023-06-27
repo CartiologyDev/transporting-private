@@ -25,14 +25,17 @@ router.get('/accountpage', function(req,res){
         return;
     } else {
         account_info(userDB).then(_data => {
-            res.render('user-page', {data: _data});
+            res.render('user-page', {data: _data, module: undefined});
         });
     }
 });
 
 router.get('/accountpage/workers', function(req,res){ 
+    const userDB = req.session.username;
     account_info(userDB).then(_data => {
-        userForm.find({userinvite: _data.userinvite})
+        userForm.find({userinvite: _data.userinvite}).then(_data => {
+            res.render('user-page', {data: _data, module: {"type": 'workers', 'content': _data}});
+        })
     });
 });
 
