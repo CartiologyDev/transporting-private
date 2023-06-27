@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transporting</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="./scss/user-confirmation.css">
+</head>
+<body>
+    <h2>Регистрация аккаунта</h2>
+
+    <form method="POST" id = "login-form" action="/register-user">
+        <div class="comm-block">
+            <div class="one-row">
+                <label for="fname"> Имя </label>
+                <input type="text" name = "fname" required>
+            </div>
+            <div class="one-row">      
+                <label for="lname"> Фамилия </label>
+                <input type="text" name = "lname" required>
+            </div>
+        </div>
+        <div class="comm-block">
+            <div class="one-row">
+                <label for="username"> Юзернейм </label>
+                <input type="text" name = "username" required>
+            </div>
+            <div class="one-row">
+                <label for="password"> Пароль </label>
+                <input type="password" name = "password" required>
+            </div>
+        </div>
+        <label for="userinvite"> Пригласительный код </label>
+        <input type="text" name = "userinvite" required>
+
+
+        <button type="submit"> Подтвердить </button>
+    </form>
+    <h5 id = "error_block" > <%- errors %></h5>
+    <form id = "transfer" method ="GET" action = "login-transfer">
+        <button type= "submit">     
+            Есть аккаунт?
+        </button>
+    </form>
+</body>
+</html>

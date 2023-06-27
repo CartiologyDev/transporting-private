@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transporting</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="./scss/user-confirmation.css">
+</head>
+<body>
+    <h2>Вход в аккаунт</h2>
+    <form method="POST" id = "login-form" action="/login-user">
+
+        <label for="username"> Юзернейм </label>
+        <input class = "small-input" type="text" name = "username">
+
+        <label for="password"> Пароль </label>
+        <input class = "small-input"  type="password" name = "password">
+
+        <button type="submit"> Подтвердить </button>
+    </form>
+    <h5 id = "error_block" > <%- errors %></h5>
+    <h6>  
+        <form id = "transfer" method ="GET" action = "register-transfer">
+            <button type= "submit">     
+                Нет аккаунта, регистрируйся?
+            </button>
+        </form>
+    </h6>
+</body>
+</html>
