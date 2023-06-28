@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Пользователь</title>
+    <link rel="stylesheet" type="text/css" href="./scss/user-page.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="sidebar">
+        <div class="welocimng-tab">Здравствуйте, <br>    <%= `${data.fname} ${data.lname}` %> </div>
+        <div class="tab">Заказы</div>
+        <div class="tab">Информация</div>
+        <div class="tab">Статистика</div>
+        <% if (data.userstatus == "head_chief") {%>
+            <div class="tab"  id = "workers">Работники</div>
+        <% } %>
+        <div class="tab " id = "logout">Выйти</div>
+    </div>
+    <%- data  %>
+
+   
+</body>
+    <script> 
+        let logout = document.querySelector("#logout")
+        let workes = document.querySelector("#workes")
+        logout.addEventListener("click", async () =>{
+            fetch("/logout-user" ,{
+                method: "GET"
+            }).then(() =>{
+
+                window.location.href = "index.html"
+            })
+        })
+        workers.addEventListener("click", async () =>{
+            fetch("/accountpage/workers" ,{
+                method: "GET"
+            }).then(() =>{
+
+            })
+        })
+    </script>
+</html>
